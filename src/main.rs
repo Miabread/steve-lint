@@ -1,19 +1,29 @@
-use anyhow::Result;
-use clap::{crate_authors, crate_version, Clap};
-use glob::Pattern;
-use std::{
-    env, fs,
-    path::{Path, PathBuf},
+use {
+    anyhow::Result,
+    clap::Clap,
+    glob::Pattern,
+    std::{
+        env, fs,
+        path::{Path, PathBuf},
+    },
 };
 
 #[derive(Clap, Debug, Clone)]
-#[clap(version = crate_version!(), author = crate_authors!())]
+#[clap(version = clap::crate_version!(), author = clap::crate_authors!())]
 struct Arguments {
-    file: Option<String>,
+    /// The directory/file to check
+    #[clap(parse(from_os_str))]
+    file: Option<PathBuf>,
+
+    /// Automatically rename directories/files
     #[clap(short, long)]
     fix: bool,
+
+    /// Log all directories/files traversed
     #[clap(short, long)]
     verbose: bool,
+
+    /// Glob pattern of directories/files to ignore
     #[clap(short, long)]
     ignore: Vec<Pattern>,
 }
