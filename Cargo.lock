@@ -162,7 +162,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "steve-lint-rust"
+name = "steve-lint"
 version = "0.1.0"
 dependencies = [
  "anyhow",

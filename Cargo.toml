@@ -1,8 +1,9 @@
 [package]
-name = "steve-lint-rust"
+name = "steve-lint"
 version = "0.1.0"
 authors = ["jamesBeeProg <jamesBeeProg@gmail.com>"]
 edition = "2018"
+description = "A simple command line utility to ensure all your file names are made up of only alphanumeric characters."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
